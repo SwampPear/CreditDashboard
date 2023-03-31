@@ -1,0 +1,4 @@
+.content {
+  box-shadow: var(--box-shadow);
+  padding: 5rem;
+}

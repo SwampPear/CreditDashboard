@@ -1,0 +1,22 @@
+.background {
+  background: 
+    radial-gradient(
+      30vw 30vw at 10vw 10vw, 
+      rgba(224, 206, 250, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(
+      30vw 30vw at 50vw 100vh, 
+      rgba(188, 211, 253, 0.8),
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(
+      30vw 30vw at 100vw 50vh, 
+      rgba(253, 217, 188, 0.8),
+      rgba(0, 0, 0, 0)
+    );
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+  z-index: -1;
+}

@@ -2,22 +2,7 @@ import { useState, useEffect } from 'react'
 import styles from './Content.module.css'
 import { Layout, Space } from 'antd'
 import PieChart from '../pieChart/PieChart'
-
-
-type apiData = {
-  isSuccess: boolean
-  data: {
-    XData: string[],
-    YData: number[],
-    Source: [],
-    Target: [],
-    Value: []
-  }[],
-  systemCode: string,
-  message: string,
-  details: string
-  timestamp: string
-}
+import { apiData } from '../../app/types'
 
 
 const Content = () => {
@@ -29,18 +14,17 @@ const Content = () => {
       return response.json()
     })
     .then(data => {
-      setData(data)
+      setData(JSON.parse(data.body))
     })
   }
 
   useEffect(() => {
     fetchData()
-    console.log(JSON.stringify(data))
   }, [])
 
   const renderGraphs = () => {
     return (
-      <PieChart/>
+      <PieChart data={data}/>
     )
   }
 
@@ -56,7 +40,6 @@ const Content = () => {
         <h1 className={styles.containerH1}>Data</h1>
         <h2 className={styles.containerH2}>This will be data</h2>
         {data?.isSuccess ? renderGraphs() : renderError()}
-        <PieChart/>
       </div>
     </Layout.Content>
   )

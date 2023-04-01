@@ -1,39 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { Pie } from '@ant-design/plots';
+import { Pie } from '@ant-design/plots'
+import { apiData } from '../../app/types'
 
-const PieChart = () => {
-  const data = [
-    {
-      type: 'zcxv',
-      value: 6399,
-    },
-    {
-      type: '分类二',
-      value: 25,
-    },
-    {
-      type: '分类三',
-      value: 18,
-    },
-    {
-      type: '分类四',
-      value: 15,
-    },
-    {
-      type: '分类五',
-      value: 10,
-    },
-    {
-      type: '其他',
-      value: 5,
-    },
-  ];
+
+interface IPieChartProps {
+  data?: apiData
+}
+
+const PieChart = (props: IPieChartProps) => {
+  const data = []
+
+  if (props.data) {
+    console.log(props.data.data)
+    for (let i = 0; i < props.data.data.length; i++) {
+      data.push({
+        'XData': props.data.data[0].XData[i],
+        'YData': props.data.data[0].YData[i]
+      })
+      console.log(props.data.data[0])
+    }
+  }
+
   const config = {
     appendPadding: 10,
     data,
-    angleField: 'value',
-    colorField: 'type',
+    angleField: 'YData',
+    colorField: 'XData',
     radius: 0.9,
     label: {
       type: 'inner',
@@ -48,8 +41,8 @@ const PieChart = () => {
         type: 'element-active',
       },
     ],
-  };
-  return <Pie {...config} />;
+  }
+  return <Pie {...config} />
 };
 
 export default PieChart

@@ -1,7 +1,8 @@
 {
     "isSuccess": true,
-    "data": {
-        "Levels": {
+    "data": [
+        {
+            "Name": "Levels",
             "XData": [
                 "A",
                 "B",
@@ -30,7 +31,8 @@
             "Target": [],
             "Value": []
         },
-        "CurrentProducts": {
+        {
+            "Name": "CurrentProducts",
             "XData": [
                 "Auto (Other)",
                 "BASIC CHECKING",
@@ -101,7 +103,8 @@
             "Target": [],
             "Value": []
         },
-        "PropensityToMoveUp": {
+        {
+            "Name": "PropensityToMoveUp",
             "XData": [
                 "0-9",
                 "10-19",
@@ -132,7 +135,8 @@
             "Target": [],
             "Value": []
         },
-        "MemberTenure": {
+        {
+            "Name": "MemberTenure",
             "XData": [
                 "0-1",
                 "1-2",
@@ -151,7 +155,8 @@
             "Target": [],
             "Value": []
         },
-        "LifeStage": {
+        {
+            "Name": "LifeStage",
             "XData": [
                 "Child",
                 "College",
@@ -172,7 +177,8 @@
             "Target": [],
             "Value": []
         },
-        "OriginationChannel": {
+        {
+            "Name": "OriginationChannel",
             "XData": [
                 "Branch",
                 "Digital",
@@ -187,7 +193,8 @@
             "Target": [],
             "Value": []
         },
-        "PreferredChannel": {
+        {
+            "Name": "PreferredChannel",
             "XData": [
                 "Branch",
                 "Digital",
@@ -202,7 +209,7 @@
             "Target": [],
             "Value": []
         }
-    },
+    ],
     "systemCode": "S100",
     "message": "Metrics",
     "details": "Metrics Found",

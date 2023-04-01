@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import styles from './Content.module.css'
-import { Layout, Space } from 'antd'
+import { Layout, Row, Col } from 'antd'
 import Chart from '../chart/Chart'
 import { apiData } from '../../app/types'
 
@@ -28,11 +28,19 @@ const Content = () => {
 
   const renderGraphs = () => {
     return (
-      <>
-        <Chart type='Pie' data={data?.data}/>
-        <Chart type='Column' data={data?.data}/>
-        <Chart type='RadialBar' data={data?.data}/>
-      </>
+      <div className={styles.chartContainer}>
+        <Row gutter={[24, 24]}>
+          <Col className={styles.halfCol}>
+            <Chart className={styles.chart} type='Pie' data={data?.data}/>
+          </Col>
+          <Col className={styles.halfCol}>
+            <Chart className={styles.chart} type='RadialBar' data={data?.data}/>
+          </Col>
+        </Row>
+        <Row>
+          <Chart className={styles.chart} type='Column' data={data?.data}/>
+        </Row>  
+      </div>
     )
   }
 
@@ -45,8 +53,8 @@ const Content = () => {
   return (
     <Layout.Content className={styles.content}>
       <div className={styles.container}>
-        <h1 className={styles.containerH1}>Data</h1>
-        <h2 className={styles.containerH2}>This will be data</h2>
+        <h1 className={styles.containerH1}>Performance Data</h1>
+        <h2 className={styles.containerH2}>Last Year</h2>
         {data?.isSuccess ? renderGraphs() : renderError()}
       </div>
     </Layout.Content>

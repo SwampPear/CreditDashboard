@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import styles from './Content.module.css'
 import { Layout, Space } from 'antd'
 import PieChart from '../pieChart/PieChart'
+import ColumnChart from '../columnChart/ColumnChart'
 import { apiData } from '../../app/types'
 
 
@@ -26,7 +27,10 @@ const Content = () => {
 
   const renderGraphs = () => {
     return (
-      <PieChart data={data?.data}/>
+      <>
+        <PieChart data={data?.data}/>
+        <ColumnChart data={data?.data}/>
+      </>
     )
   }
 

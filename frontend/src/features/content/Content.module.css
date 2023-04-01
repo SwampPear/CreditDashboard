@@ -1,0 +1,27 @@
+.content {
+  background: transparent;
+  padding: 10rem 12vw 5rem 12vw;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.35);
+  border: none;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  width: 100%
+}
+
+.containerH1 {
+  color: var(--soft-black);
+  font-size: 2rem;
+  font-family: 'Cabin';
+  margin: 0 0 0.5rem 0;
+}
+
+.containerH2 {
+  color: var(--gray-purple);
+  font-weight: normal;
+  font-size: 1.25rem;
+  font-family: 'Cabin';
+  margin: 0
+}

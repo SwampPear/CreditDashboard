@@ -2,9 +2,7 @@
   background-color: #fff;
   border-bottom: 1px solid var(--accent-blue);
   box-shadow: var(--box-shadow);
-  left: 0;
   height: 64px;
   position: fixed;
-  top: 0;
   width: 100vw;
 }

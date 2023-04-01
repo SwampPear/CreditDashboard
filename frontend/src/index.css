@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+
+:root {
+  --white-blue: #d6e6f6;
+  --soft-black: #414150;
+  --gray-purple: #7a7a98;
+  --box-shadow: rgba(99, 99, 99, 0.1) 0px 8px 8px 0px;
+}
+
+body {
+  background-color: var(--white-blue);
+  margin: 0;
+  font-family: 'Cabin'
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

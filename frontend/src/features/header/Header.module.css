@@ -5,4 +5,5 @@
   height: 64px;
   position: fixed;
   width: 100vw;
+  z-index: 999;
 }

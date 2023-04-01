@@ -17,6 +17,9 @@ const Content = () => {
       console.log(data)
       setData(JSON.parse(data.body))
     })
+    .catch(error => {
+      console.log('fetch data failed', error);
+    })
   }
 
   useEffect(() => {
@@ -28,6 +31,7 @@ const Content = () => {
       <>
         <Chart type='Pie' data={data?.data}/>
         <Chart type='Column' data={data?.data}/>
+        <Chart type='RadialBar' data={data?.data}/>
       </>
     )
   }

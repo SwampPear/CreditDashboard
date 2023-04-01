@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Pie, Column } from '@ant-design/plots'
+import { Pie, Column, RadialBar } from '@ant-design/plots'
 import { apiData } from '../../app/types'
 
 
@@ -41,9 +41,23 @@ const columnConfig = {
   },
 }
 
+// needed to fix type error in Ant radial bar chart
+const lineCapRound: 'round' | 'butt' | 'square' | undefined = 'round'
+
+const radialBarConfig = {
+  xField: 'XData',
+  yField: 'YData',
+  maxAngle: 270,
+  radius: 0.8,
+  innerRadius: 0.2,
+  barStyle: {
+    lineCap: lineCapRound,
+  },
+}
+
 
 interface IChartProps {
-  type: 'Pie' | 'Column'
+  type: 'Pie' | 'Column' | 'RadialBar'
   className?: string
   data?: apiData['data']
 }
@@ -77,6 +91,10 @@ const Chart = (props: IChartProps) => {
         case 'Column':
           return (
             <Column className={props.className} {...columnConfig} data={data}></Column>
+          )
+        case 'RadialBar':
+          return (
+            <RadialBar className={props.className} {...radialBarConfig} data={data}></RadialBar>
           )
         default:
           return <></>

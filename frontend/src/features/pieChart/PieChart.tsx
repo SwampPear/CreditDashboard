@@ -5,20 +5,19 @@ import { apiData } from '../../app/types'
 
 
 interface IPieChartProps {
-  data?: apiData
+  data?: apiData['data']
 }
 
 const PieChart = (props: IPieChartProps) => {
   const data = []
 
   if (props.data) {
-    console.log(props.data.data)
-    for (let i = 0; i < props.data.data.length; i++) {
+    console.log(props.data)
+    for (let i = 0; i < props.data.length; i++) {
       data.push({
-        'XData': props.data.data[0].XData[i],
-        'YData': props.data.data[0].YData[i]
+        'XData': props.data[0].XData[i],
+        'YData': props.data[0].YData[i]
       })
-      console.log(props.data.data[0])
     }
   }
 

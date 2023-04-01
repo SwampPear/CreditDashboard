@@ -11,8 +11,9 @@ def lambda_handler(event, context):
     }
     
     try:
-        data = {
-            'Levels': {
+        data = [
+            {
+                'Name': 'Levels',
                 'XData': [
                     'A',
                     'B',
@@ -41,7 +42,8 @@ def lambda_handler(event, context):
                 'Target': [],
                 'Value': []
             },
-            'CurrentProducts': {
+            {
+                'Name': 'CurrentProducts',
                 'XData': [
                     'Auto (Other)',
                     'BASIC CHECKING',
@@ -112,7 +114,8 @@ def lambda_handler(event, context):
                 'Target': [],
                 'Value': []
             },
-            'PropensityToMoveUp': {
+            {
+                'Name': 'PropensityToMoveUp',
                 'XData': [
                     '0-9',
                     '10-19',
@@ -143,7 +146,8 @@ def lambda_handler(event, context):
                 'Target': [],
                 'Value': []
             },
-            'MemberTenure': {
+            {
+                'Name': 'MemberTenure',
                 'XData': [
                     '0-1',
                     '1-2',
@@ -162,7 +166,8 @@ def lambda_handler(event, context):
                 'Target': [],
                 'Value': []
             },
-            'LifeStage': {
+            {
+                'Name': 'LifeStage',
                 'XData': [
                     'Child',
                     'College',
@@ -183,7 +188,8 @@ def lambda_handler(event, context):
                 'Target': [],
                 'Value': []
             },
-            'OriginationChannel': {
+            {
+                'Name': 'OriginationChannel',
                 'XData': [
                     'Branch',
                     'Digital',
@@ -198,7 +204,8 @@ def lambda_handler(event, context):
                 'Target': [],
                 'Value': []
             },
-            'PreferredChannel': {
+            {
+                'Name': 'PreferredChannel',
                 'XData': [
                     'Branch',
                     'Digital',
@@ -213,7 +220,7 @@ def lambda_handler(event, context):
                 'Target': [],
                 'Value': []
             }
-        }
+        ]
 
         is_success = True
         system_code = 'S100'

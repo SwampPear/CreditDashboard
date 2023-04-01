@@ -14,17 +14,19 @@ const Content = () => {
       return response.json()
     })
     .then(data => {
+      console.log(data)
       setData(JSON.parse(data.body))
     })
   }
 
   useEffect(() => {
     fetchData()
+    console.log(data)
   }, [])
 
   const renderGraphs = () => {
     return (
-      <PieChart data={data}/>
+      <PieChart data={data?.data}/>
     )
   }
 

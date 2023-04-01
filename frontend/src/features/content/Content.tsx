@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import styles from './Content.module.css'
-import { Layout, Row, Col } from 'antd'
-import Chart from '../chart/Chart'
+import { Layout, Row, Col, Select } from 'antd'
+import Charts from '../charts/Charts'
+import ChartControls from '../chartControls/ChartControls'
 import { apiData } from '../../app/types'
 
 
@@ -28,19 +29,10 @@ const Content = () => {
 
   const renderGraphs = () => {
     return (
-      <div className={styles.chartContainer}>
-        <Row gutter={[24, 24]}>
-          <Col className={styles.halfCol}>
-            <Chart className={styles.chart} type='Pie' data={data?.data}/>
-          </Col>
-          <Col className={styles.halfCol}>
-            <Chart className={styles.chart} type='RadialBar' data={data?.data}/>
-          </Col>
-        </Row>
-        <Row>
-          <Chart className={styles.chart} type='Column' data={data?.data}/>
-        </Row>  
-      </div>
+      <>
+        <ChartControls/>
+        <Charts data={data?.data}/>
+      </>
     )
   }
 

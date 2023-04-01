@@ -1,3 +1,4 @@
+import style from './Chart.module.css'
 import { useEffect, useState } from 'react'
 import { Pie, Column, RadialBar } from '@ant-design/plots'
 import { apiData } from '../../app/types'
@@ -86,15 +87,15 @@ const Chart = (props: IChartProps) => {
       switch (props.type) {
         case 'Pie':
           return (
-            <Pie className={props.className} {...pieConfig} data={data}></Pie>
+            <Pie className={style.chart} {...pieConfig} data={data}></Pie>
           )
         case 'Column':
           return (
-            <Column className={props.className} {...columnConfig} data={data}></Column>
+            <Column className={style.chart} {...columnConfig} data={data}></Column>
           )
         case 'RadialBar':
           return (
-            <RadialBar className={props.className} {...radialBarConfig} data={data}></RadialBar>
+            <RadialBar className={style.chart} {...radialBarConfig} data={data}></RadialBar>
           )
         default:
           return <></>

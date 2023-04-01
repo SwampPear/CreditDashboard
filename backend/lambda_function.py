@@ -1,6 +1,15 @@
 import json
 
 def lambda_handler(event, context):
+    headers = {
+        'Content-Type' : 'application/json',
+        'Access-Control-Allow-Headers' : 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
+        'Access-Control-Allow-Methods' : 'GET',
+        'Access-Control-Allow-Credentials' : True,
+        'Access-Control-Allow-Origin' : '*',
+        'X-Requested-With' : '*'
+    }
+    
     try:
         data = {
             'Levels': {
@@ -221,6 +230,7 @@ def lambda_handler(event, context):
     
         return {
             'statusCode': 200,
+            'headers': json.dumps(headers),
             'body': json.dumps(body)
         }
     
@@ -239,6 +249,6 @@ def lambda_handler(event, context):
     
         return {
             'statusCode': 500,
+            'headers': headers,
             'body': json.dumps(body)
         }
-    

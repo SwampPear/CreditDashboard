@@ -30,24 +30,7 @@
   left: 4rem;
 }
 
-.header {
-  align-items: center;
-  display: flex;
-  height: 4rem;
-  justify-content: right;
-  padding: 0 2rem;
-  width: calc(100% - 4rem);
-}
 
-.profileImg {
-  border-radius: 50%;
-  height: 2rem;
-  width: 2rem;
-}
-
-.search {
-  margin: 0 2rem;
-}
 
 .menuButton {
   background-color: transparent;

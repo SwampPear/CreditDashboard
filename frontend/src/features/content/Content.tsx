@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import styles from './Content.module.css'
 import { Layout, Row, Col, Select } from 'antd'
 import Charts from '../charts/Charts'
-import ChartControls from '../chartControls/ChartControls'
 import { apiData } from '../../app/types'
 
 
@@ -30,7 +29,6 @@ const Content = () => {
   const renderGraphs = () => {
     return (
       <>
-        <ChartControls/>
         <Charts data={data?.data}/>
       </>
     )

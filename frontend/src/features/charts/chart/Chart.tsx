@@ -1,7 +1,7 @@
 import style from './Chart.module.css'
 import { useEffect, useState } from 'react'
 import { Pie, Column, RadialBar } from '@ant-design/plots'
-import { apiData } from '../../app/types'
+import { apiData } from '../../../app/types'
 
 
 const pieConfig = {
@@ -60,7 +60,14 @@ const radialBarConfig = {
 interface IChartProps {
   type: 'Pie' | 'Column' | 'RadialBar'
   className?: string
-  data?: apiData['data']
+  data?: {
+    Name: string, 
+    XData: string[], 
+    YData: number[],
+    Source: [],
+    Target: [],
+    Value: []
+  }
 }
 
 const Chart = (props: IChartProps) => {
@@ -70,11 +77,10 @@ const Chart = (props: IChartProps) => {
     const tempData = []
 
     if (props.data) {
-      console.log(props.data)
-      for (let i = 0; i < props.data.length; i++) {
+      for (let i = 0; i < props.data.XData.length; i++) {
         tempData.push({
-          'XData': props.data[0].XData[i],
-          'YData': props.data[0].YData[i]
+          'XData': props.data.XData[i],
+          'YData': props.data.YData[i]
         })
       }
     }

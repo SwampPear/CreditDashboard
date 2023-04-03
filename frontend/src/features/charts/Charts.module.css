@@ -1,4 +1,12 @@
-.container {
+.chartControlsContainer {
+  display: flex;
+  height: fit-content;
+  justify-content: right;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.chartContainer {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;

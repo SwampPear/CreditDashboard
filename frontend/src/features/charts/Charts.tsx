@@ -23,12 +23,7 @@ const Charts = (props: IChartsProps) => {
   useEffect(() => {
     if (props.data) {
       setSelectedData(props.data?.[0].Name)
-
-      for (let i = 0; i < props.data?.length; i++) {
-        if (props.data?.[i].Name === selectedData) {
-          setData(props.data?.[i])
-        }
-      }
+      setData(props.data?.[0])
     }
 
   }, [props.data])
@@ -38,10 +33,12 @@ const Charts = (props: IChartsProps) => {
       setSelectedData(value)
 
       for (let i = 0; i < props.data?.length; i++) {
-        if (props.data?.[i].Name === selectedData) {
+        if (props.data?.[i].Name === value) {
           setData(props.data?.[i])
         }
       }
+
+      console.log(value)
     }
   }
 

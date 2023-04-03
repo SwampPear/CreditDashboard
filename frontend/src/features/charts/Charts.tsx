@@ -51,7 +51,7 @@ const Charts = (props: IChartsProps) => {
           options={props.data?.map((element) => {return {value: element['Name'], label: element['Name']}})}
         />
       </div>
-      <div className={styles.container}>
+      <div className={styles.chartContainer}>
         <Row gutter={[24, 24]}>
           <Col className={styles.col}>
             <Chart type='Pie' data={data}/>

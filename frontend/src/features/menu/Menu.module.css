@@ -1,7 +1,37 @@
-.menu {
-  background-color: rgba(255, 255, 255, 1);
+.wrapper {
+  align-items: center;
+  background-color: var(--bg);
+  box-shadow: var(--box-shadow);
+  display: flex;
   height: 100vh;
+  justify-content: center;
+  width: 4rem;
   position: fixed;
-  top: 0;
-  width: 15rem;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  justify-content: space-around;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+  padding: .5rem;
+  transition: .2s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--bg-hover);
+}
+
+.icon {
+  fill: var(--soft-black);
+  height: 1.5rem;
+  width: 1.5rem;
 }

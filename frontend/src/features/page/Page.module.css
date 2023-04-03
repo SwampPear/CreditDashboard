@@ -1,8 +1,69 @@
-.space {
+.mainSection {
+  display: flex;
+  height: 100vh;
   width: 100vw;
 }
 
-.layout {
+.menuWrapper {
+  align-items: center;
+  background-color: var(--bg);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 4rem;
+  position: fixed;
+}
+
+.menu {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  justify-content: space-around;
+}
+
+.contentWrapper {
+  height: 100vh;
+  width: calc(100vw - 4rem);
+  position: absolute;
+  left: 4rem;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  height: 4rem;
+  justify-content: right;
+  padding: 0 2rem;
+  width: calc(100% - 4rem);
+}
+
+.profileImg {
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+}
+
+.search {
+  margin: 0 2rem;
+}
+
+.menuButton {
   background-color: transparent;
-  padding: 0;
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+  padding: .5rem;
+  transition: .2s ease-in-out;
+}
+
+.menuButton:hover {
+  background-color: var(--bg-hover);
+}
+
+.menuButtonIcon {
+  fill: var(--soft-black);
+  height: 1.5rem;
+  width: 1.5rem;
 }

@@ -5,7 +5,7 @@ import { apiData } from '../../../app/types'
 
 
 const pieConfig = {
-  appendPadding: 10,
+  appendPadding: 16,
   angleField: 'YData',
   colorField: 'XData',
   radius: 0.9,
@@ -25,7 +25,7 @@ const pieConfig = {
 }
 
 const columnConfig = {
-  appendPadding: 10,
+  appendPadding: 16,
   xField: 'XData',
   yField: 'YData',
   label: {
@@ -46,6 +46,7 @@ const columnConfig = {
 const lineCapRound: 'round' | 'butt' | 'square' | undefined = 'round'
 
 const radialBarConfig = {
+  appendPadding: 16,
   xField: 'XData',
   yField: 'YData',
   maxAngle: 270,
@@ -93,15 +94,21 @@ const Chart = (props: IChartProps) => {
       switch (props.type) {
         case 'Pie':
           return (
-            <Pie className={style.chart} {...pieConfig} data={data}></Pie>
+            <div className={style.chartContainer}>
+              <Pie className={style.chart} {...pieConfig} data={data}></Pie>
+            </div>
           )
         case 'Column':
           return (
-            <Column className={style.chart} {...columnConfig} data={data}></Column>
+            <div className={style.chartContainer}>
+              <Column className={style.chart} {...columnConfig} data={data}></Column>
+            </div>            
           )
         case 'RadialBar':
           return (
-            <RadialBar className={style.chart} {...radialBarConfig} data={data}></RadialBar>
+            <div className={style.chartContainer}>
+              <RadialBar className={style.chart} {...radialBarConfig} data={data}></RadialBar>
+            </div>           
           )
         default:
           return <></>

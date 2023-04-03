@@ -46,6 +46,7 @@ const Charts = (props: IChartsProps) => {
     <>
       <div className={styles.chartControlsContainer}>
         <Select
+          className={styles.select}
           onChange={handleChange}
           defaultValue={props.data?.[0].Name}
           options={props.data?.map((element) => {return {value: element['Name'], label: element['Name']}})}

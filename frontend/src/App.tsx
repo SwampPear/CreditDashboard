@@ -1,5 +1,5 @@
 import Background from './features/background/Background'
-import Page from './features/page/Page'
+import Page from './features/paged/Page'
 
 
 const App = () => {

@@ -28,9 +28,7 @@ const Content = () => {
 
   const renderGraphs = () => {
     return (
-      <>
-        <Charts data={data?.data}/>
-      </>
+      <Charts data={data?.data}/>
     )
   }
 

@@ -41,8 +41,8 @@ const Content = () => {
   return (
     <Layout.Content className={styles.content}>
       <div className={styles.container}>
-        <h1 className={styles.containerH1}>Performance Data</h1>
-        <h2 className={styles.containerH2}>Last Year</h2>
+        <h1 className={styles.containerH1}>Dashboard</h1>
+        <h2 className={styles.containerH2}>Performance Data</h2>
         {data?.isSuccess ? renderGraphs() : renderError()}
       </div>
     </Layout.Content>

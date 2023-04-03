@@ -4,9 +4,9 @@ import { Layout } from 'antd'
 
 const Menu = () => {
   return (
-    <Layout.Header className={styles.menu}>
+    <div className={styles.menu}>
       header
-    </Layout.Header>
+    </div>
   )
 }
 

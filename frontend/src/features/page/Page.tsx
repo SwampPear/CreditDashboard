@@ -6,7 +6,7 @@ import Content from '../content/Content'
 
 const Page = () => {
   return (
-    <Space direction="vertical" style={{ width: '100%' }}>
+    <Space direction="vertical" className={styles.space}>
       <Layout className={styles.layout}>
         <Header/>
         <Content/>

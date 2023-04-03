@@ -5,18 +5,29 @@
 }
 
 .menuWrapper {
+  align-items: center;
   background-color: var(--bg);
   box-shadow: var(--box-shadow);
+  display: flex;
   height: 100vh;
-  width: 8rem;
+  justify-content: center;
+  width: 4rem;
   position: fixed;
+}
+
+.menu {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  justify-content: space-around;
 }
 
 .contentWrapper {
   height: 100vh;
-  width: calc(100vw - 8rem);
+  width: calc(100vw - 4rem);
   position: absolute;
-  left: 8rem;
+  left: 4rem;
 }
 
 .header {
@@ -36,4 +47,23 @@
 
 .search {
   margin: 0 2rem;
+}
+
+.menuButton {
+  background-color: transparent;
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+  padding: .5rem;
+  transition: .2s ease-in-out;
+}
+
+.menuButton:hover {
+  background-color: var(--bg-hover);
+}
+
+.menuButtonIcon {
+  fill: var(--soft-black);
+  height: 1.5rem;
+  width: 1.5rem;
 }

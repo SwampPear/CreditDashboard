@@ -5,12 +5,6 @@ import { apiData } from '../../app/types'
 import { useState, useEffect } from 'react'
 
 
-interface IChartProps {
-  type: 'Pie' | 'Column' | 'RadialBar'
-  data?: apiData['data']
-}
-
-
 interface IChartsProps {
   data?: apiData['data']
 }
@@ -47,24 +41,17 @@ const Charts = (props: IChartsProps) => {
 
   return (
     <>
-      <div className={styles.chartControlsContainer}>
-        <Select
-          onChange={handleChange}
-          defaultValue={props.data?.[0].Name}
-          options={props.data?.map((element) => {return {value: element['Name'], label: element['Name']}})}
-        />
-      </div>
       <div className={styles.chartContainer}>
         <Row gutter={[24, 24]}>
           <Col className={styles.col}>
-            <Chart type='Pie' data={data}/>
+            <Chart type='Pie' data={props.data}/>
           </Col>
           <Col className={styles.col}>
-            <Chart type='RadialBar' data={data}/>
+            <Chart type='RadialBar' data={props.data}/>
           </Col>
         </Row>
         <Row>
-          <Chart type='Column' data={data}/>
+          <Chart type='Column' data={props.data}/>
         </Row>
       </div>
     </>

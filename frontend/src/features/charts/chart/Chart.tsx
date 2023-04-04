@@ -1,6 +1,7 @@
 import style from './Chart.module.css'
 import { useEffect, useState } from 'react'
 import { Pie, Column, RadialBar } from '@ant-design/plots'
+import { Select } from 'antd'
 import { apiData } from '../../../app/types'
 
 
@@ -60,33 +61,53 @@ const radialBarConfig = {
 
 interface IChartProps {
   type: 'Pie' | 'Column' | 'RadialBar'
-  data?: {
+  data?: apiData['data']
+  /*{
     Name: string, 
     XData: string[], 
     YData: number[],
     Source: [],
     Target: [],
     Value: []
-  }
+  }*/
 }
 
 const Chart = (props: IChartProps) => {
   const [data, setData] = useState<{XData: string, YData: number}[]>()
 
   useEffect(() => {
-    const tempData = []
-
     if (props.data) {
-      for (let i = 0; i < props.data.XData.length; i++) {
+      const tempData = []
+
+      for (let i = 0; i < props.data[0].XData.length; i++) {
         tempData.push({
-          'XData': props.data.XData[i],
-          'YData': props.data.YData[i]
+          'XData': props.data[0].XData[i],
+          'YData': props.data[0].YData[i]
         })
       }
+      
+      setData(tempData)
     }
-
-    setData(tempData)
   }, [props.data])
+
+  const handleChange = (value: string) => {
+    if (props.data) {
+      for (let i = 0; i < props.data?.length; i++) {
+        if (props.data?.[i].Name === value) {
+          const tempData = []
+
+          for (let j = 0; j < props.data[i].XData.length; j++) {
+            tempData.push({
+              'XData': props.data[i].XData[j],
+              'YData': props.data[i].YData[j]
+            })
+          }
+          
+          setData(tempData)
+        }
+      }
+    }
+  }
 
   const render = () => {
     if (data) {
@@ -94,18 +115,39 @@ const Chart = (props: IChartProps) => {
         case 'Pie':
           return (
             <div className={style.chartContainer}>
+              <div className={style.chartControlsContainer}>
+                <Select
+                  onChange={handleChange}
+                  defaultValue={props.data?.[0].Name}
+                  options={props.data?.map((element) => {return {value: element['Name'], label: element['Name']}})}
+                />
+              </div>
               <Pie className={style.chart} {...pieConfig} data={data}></Pie>
             </div>
           )
         case 'Column':
           return (
             <div className={style.chartContainer}>
+              <div className={style.chartControlsContainer}>
+                <Select
+                  onChange={handleChange}
+                  defaultValue={props.data?.[0].Name}
+                  options={props.data?.map((element) => {return {value: element['Name'], label: element['Name']}})}
+                />
+              </div>
               <Column className={style.chart} {...columnConfig} data={data}></Column>
             </div>            
           )
         case 'RadialBar':
           return (
             <div className={style.chartContainer}>
+              <div className={style.chartControlsContainer}>
+                <Select
+                  onChange={handleChange}
+                  defaultValue={props.data?.[0].Name}
+                  options={props.data?.map((element) => {return {value: element['Name'], label: element['Name']}})}
+                />
+              </div>
               <RadialBar className={style.chart} {...radialBarConfig} data={data}></RadialBar>
             </div>           
           )

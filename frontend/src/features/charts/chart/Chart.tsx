@@ -60,7 +60,6 @@ const radialBarConfig = {
 
 interface IChartProps {
   type: 'Pie' | 'Column' | 'RadialBar'
-  className?: string
   data?: {
     Name: string, 
     XData: string[], 

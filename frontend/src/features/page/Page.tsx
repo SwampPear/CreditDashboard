@@ -2,7 +2,7 @@ import styles from './Page.module.css'
 
 import Menu from '../menu/Menu'
 import Header from '../header/Header'
-import Content from '../contentd/Content'
+import Content from '../content/Content'
 
 
 

@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
 import styles from './Content.module.css'
-import { Layout, Row, Col, Select } from 'antd'
+import { Layout } from 'antd' 
+import { useState, useEffect } from 'react'
 import Charts from '../charts/Charts'
 import { apiData } from '../../app/types'
 
@@ -33,6 +33,7 @@ const Content = () => {
   }
 
   const renderError = () => {
+    console.log('asdf')
     return (
       <></>
     )

@@ -5,12 +5,17 @@ import { apiData } from '../../app/types'
 import { useState, useEffect } from 'react'
 
 
+interface IChartProps {
+  type: 'Pie' | 'Column' | 'RadialBar'
+  data?: apiData['data']
+}
+
+
 interface IChartsProps {
   data?: apiData['data']
 }
 
 const Charts = (props: IChartsProps) => {
-  const [selectedData, setSelectedData] = useState<string>()
   const [data, setData] = useState<{
     Name: string, 
     XData: string[], 
@@ -22,7 +27,6 @@ const Charts = (props: IChartsProps) => {
 
   useEffect(() => {
     if (props.data) {
-      setSelectedData(props.data?.[0].Name)
       setData(props.data?.[0])
     }
 
@@ -30,7 +34,6 @@ const Charts = (props: IChartsProps) => {
 
   const handleChange = (value: string) => {
     if (props.data) {
-      setSelectedData(value)
 
       for (let i = 0; i < props.data?.length; i++) {
         if (props.data?.[i].Name === value) {

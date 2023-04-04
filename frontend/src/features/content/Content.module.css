@@ -1,13 +1,12 @@
 .content {
   background: transparent;
-  padding: 8rem 12vw 5rem 12vw;
+  padding: 4rem;
 }
 
 .container {
   background-color: transparent;
   border: none;
   border-radius: 1.5rem;
-  padding: 3rem;
   width: 100%
 }
 

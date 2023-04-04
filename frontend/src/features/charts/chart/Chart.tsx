@@ -74,6 +74,7 @@ interface IChartProps {
 
 const Chart = (props: IChartProps) => {
   const [data, setData] = useState<{XData: string, YData: number}[]>()
+  const [dataSet, setDataSet] = useState<string>()
 
   useEffect(() => {
     if (props.data) {
@@ -87,6 +88,7 @@ const Chart = (props: IChartProps) => {
       }
       
       setData(tempData)
+      setDataSet(props.data?.[0].Name)
     }
   }, [props.data])
 
@@ -104,6 +106,8 @@ const Chart = (props: IChartProps) => {
           }
           
           setData(tempData)
+          setDataSet(props.data?.[i].Name)
+          console.log(dataSet?.match(/[A-Z][a-z]+|[0-9]+/g)?.join(" ").replace(/ /g, "\u00A0"))
         }
       }
     }
@@ -116,6 +120,9 @@ const Chart = (props: IChartProps) => {
           return (
             <div className={style.chartContainer}>
               <div className={style.chartControlsContainer}>
+                <h1 className={style.chartHeader}>
+                  {dataSet?.match(/[A-Z][a-z]+|[0-9]+/g)?.join(" ")}
+                </h1>
                 <Select
                   onChange={handleChange}
                   defaultValue={props.data?.[0].Name}
@@ -129,6 +136,9 @@ const Chart = (props: IChartProps) => {
           return (
             <div className={style.chartContainer}>
               <div className={style.chartControlsContainer}>
+                <h1 className={style.chartHeader}>
+                  {dataSet?.match(/[A-Z][a-z]+|[0-9]+/g)?.join(" ")}
+                </h1>
                 <Select
                   onChange={handleChange}
                   defaultValue={props.data?.[0].Name}
@@ -142,6 +152,9 @@ const Chart = (props: IChartProps) => {
           return (
             <div className={style.chartContainer}>
               <div className={style.chartControlsContainer}>
+                <h1 className={style.chartHeader}>
+                  {dataSet?.match(/[A-Z][a-z]+|[0-9]+/g)?.join(" ")}
+                </h1>
                 <Select
                   onChange={handleChange}
                   defaultValue={props.data?.[0].Name}

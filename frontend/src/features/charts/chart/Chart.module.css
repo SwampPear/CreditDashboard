@@ -4,3 +4,16 @@
   box-shadow: var(--box-shadow);
   width: 100%;
 }
+
+.chartHeader {
+  font-size: 1.25rem;
+  color: var(--soft-black);
+  font-family: 'Cabin';
+}
+
+.chartControlsContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem
+}

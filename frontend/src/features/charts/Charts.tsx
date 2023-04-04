@@ -10,35 +10,6 @@ interface IChartsProps {
 }
 
 const Charts = (props: IChartsProps) => {
-  const [data, setData] = useState<{
-    Name: string, 
-    XData: string[], 
-    YData: number[],
-    Source: [],
-    Target: [],
-    Value: []
-  }>()
-
-  useEffect(() => {
-    if (props.data) {
-      setData(props.data?.[0])
-    }
-
-  }, [props.data])
-
-  const handleChange = (value: string) => {
-    if (props.data) {
-
-      for (let i = 0; i < props.data?.length; i++) {
-        if (props.data?.[i].Name === value) {
-          setData(props.data?.[i])
-        }
-      }
-
-      console.log(value)
-    }
-  }
-
   return (
     <>
       <div className={styles.chartContainer}>
@@ -47,11 +18,16 @@ const Charts = (props: IChartsProps) => {
             <Chart type='Pie' data={props.data}/>
           </Col>
           <Col className={styles.col}>
-            <Chart type='RadialBar' data={props.data}/>
+            <Chart type='Pie' data={props.data}/>
           </Col>
         </Row>
-        <Row>
-          <Chart type='Column' data={props.data}/>
+        <Row gutter={[24, 24]}>
+          <Col className={styles.col}>
+            <Chart type='RadialBar' data={props.data}/>
+          </Col>
+          <Col className={styles.col}>
+            <Chart type='Column' data={props.data}/>
+          </Col>
         </Row>
       </div>
     </>

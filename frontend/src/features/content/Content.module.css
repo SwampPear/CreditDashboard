@@ -14,7 +14,7 @@
   color: var(--soft-black);
   font-size: 2rem;
   font-family: 'Cabin';
-  margin: 0 0 0.5rem 0;
+  margin: .5rem 0;
 }
 
 .containerH2 {
@@ -22,4 +22,5 @@
   font-weight: normal;
   font-size: 1.25rem;
   font-family: 'Cabin';
+  margin: 0 0 1.5rem 0;
 }

@@ -4,15 +4,25 @@
   justify-content: right;
   margin: 2rem 0;
   width: 100%;
+  padding: 1rem;
 }
 
 .chartContainer {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;
-  grid-gap: 24px;
+  grid-gap: 32px;
 }
 
 .col {
   width: 50%
+}
+
+.widgetContainer {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 32px;
+  height: 100%;
+  padding: 0;
 }

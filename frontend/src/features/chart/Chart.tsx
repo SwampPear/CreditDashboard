@@ -2,7 +2,7 @@ import style from './Chart.module.css'
 import { useEffect, useState } from 'react'
 import { Pie, Column, RadialBar } from '@ant-design/plots'
 import { Select } from 'antd'
-import { apiData } from '../../../app/types'
+import { apiData } from '../../app/types'
 
 
 const pieConfig = {
@@ -107,7 +107,6 @@ const Chart = (props: IChartProps) => {
           
           setData(tempData)
           setDataSet(props.data?.[i].Name)
-          console.log(dataSet?.match(/[A-Z][a-z]+|[0-9]+/g)?.join(" ").replace(/ /g, "\u00A0"))
         }
       }
     }

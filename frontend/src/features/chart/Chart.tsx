@@ -128,7 +128,7 @@ const Chart = (props: IChartProps) => {
                   options={props.data?.map((element) => {return {value: element['Name'], label: element['Name']}})}
                 />
               </div>
-              <Pie className={style.chart} {...pieConfig} data={data}></Pie>
+              <Pie autoFit={false} className={style.chart} {...pieConfig} data={data} height={100}></Pie>
             </div>
           )
         case 'Column':

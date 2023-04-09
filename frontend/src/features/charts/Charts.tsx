@@ -14,7 +14,7 @@ const Charts = (props: IChartsProps) => {
   return (
     <>
       <div className={styles.chartContainer}>
-        <Row gutter={[24, 24]}>
+        <Row className={styles.row} gutter={[24, 24]}>
           <Col className={styles.col}>
             <div className={styles.widgetContainer}>
               <Widget header="d" content={'asdf'}/>
@@ -27,7 +27,7 @@ const Charts = (props: IChartsProps) => {
             <Chart type='Pie' data={props.data}/>
           </Col>
         </Row>
-        <Row gutter={[24, 24]}>
+        <Row className={styles.row} gutter={[24, 24]}>
           <Col className={styles.col}>
             <Chart type='RadialBar' data={props.data}/>
           </Col>

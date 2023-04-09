@@ -41,4 +41,8 @@
     height: fit-content;
     padding: 0;
   }
+
+  .row {
+    height: fit-content;
+  }
 }

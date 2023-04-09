@@ -3,6 +3,14 @@
   padding: 4rem;
 }
 
+
+@media (max-width: 430px) {
+  .content {
+    background: transparent;
+    padding: 1.5rem;
+  }
+}
+
 .container {
   background-color: transparent;
   border: none;
@@ -23,4 +31,21 @@
   font-size: 1.25rem;
   font-family: 'Cabin';
   margin: 0 0 1.5rem 0;
+}
+
+@media (max-width: 430px) {
+  .containerH1 {
+    color: var(--soft-black);
+    font-size: 1.75rem;
+    font-family: 'Cabin';
+    margin: .25rem 0;
+  }
+  
+  .containerH2 {
+    color: var(--gray-purple);
+    font-weight: normal;
+    font-size: 1.25rem;
+    font-family: 'Cabin';
+    margin: 0 0 1.5rem 0;
+  }
 }

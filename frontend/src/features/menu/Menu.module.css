@@ -9,6 +9,12 @@
   position: fixed;
 }
 
+@media (max-width: 430px) {
+  .wrapper { 
+    display: none;
+  }
+}
+
 .container {
   align-items: center;
   display: flex;

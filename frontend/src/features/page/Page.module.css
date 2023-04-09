@@ -30,7 +30,14 @@
   left: 4rem;
 }
 
-
+@media (max-width: 430px) {
+  .contentWrapper {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+  }
+}
 
 .menuButton {
   align-items: center;

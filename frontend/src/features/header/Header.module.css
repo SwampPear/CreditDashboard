@@ -16,3 +16,9 @@
 .search {
   margin: 0 2rem;
 }
+
+@media (max-width: 430px) {
+  .search {
+    display: none;
+  }
+}

@@ -1,30 +1,37 @@
 import styles from './Content.module.css'
-import { Layout } from 'antd' 
 import { useState, useEffect } from 'react'
+import { Layout } from 'antd'
 import Charts from '../charts/Charts'
 import { apiData } from '../../app/types'
 
 
+const API_ENDPOINT = 'https://umcs1mrbkf.execute-api.us-west-2.amazonaws.com/Master'
+
+
 const Content = () => {
   const [data, setData] = useState<apiData>()
-
-  const fetchData = () => {
-    fetch('https://umcs1mrbkf.execute-api.us-west-2.amazonaws.com/Master/getdata')
-    .then(response => {
-      return response.json()
-    })
-    .then(data => {
-      console.log(data)
-      setData(JSON.parse(data.body))
-    })
-    .catch(error => {
-      console.log('fetch data failed', error);
-    })
-  }
+  const [error, setError] = useState<boolean>(false)
 
   useEffect(() => {
+    const fetchData = () => {
+      fetch(`${API_ENDPOINT}/getdata`)
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        setData(JSON.parse(data.body))
+      })
+      .catch(error => {
+        setError(true)
+      })
+    }
+
     fetchData()
   }, [])
+
+  const renderLoading = () => {
+    return <div className={styles.message}>Loading...</div>
+  }
 
   const renderGraphs = () => {
     return (
@@ -33,10 +40,7 @@ const Content = () => {
   }
 
   const renderError = () => {
-    console.log('asdf')
-    return (
-      <></>
-    )
+    return <div className={styles.message}>Error loading data.</div>
   }
 
   return (
@@ -44,7 +48,7 @@ const Content = () => {
       <div className={styles.container}>
         <h1 className={styles.containerH1}>Dashboard</h1>
         <h2 className={styles.containerH2}>Performance Data</h2>
-        {data?.isSuccess ? renderGraphs() : renderError()}
+        {error ? renderError() : !data ? renderLoading() : renderGraphs()}
       </div>
     </Layout.Content>
   )

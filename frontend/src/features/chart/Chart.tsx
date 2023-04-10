@@ -4,7 +4,6 @@ import { Pie, Column, RadialBar } from '@ant-design/plots'
 import { Select } from 'antd'
 import { apiData } from '../../app/types'
 
-
 const pieConfig = {
   appendPadding: 16,
   angleField: 'YData',
@@ -62,14 +61,6 @@ const radialBarConfig = {
 interface IChartProps {
   type: 'Pie' | 'Column' | 'RadialBar'
   data?: apiData['data']
-  /*{
-    Name: string, 
-    XData: string[], 
-    YData: number[],
-    Source: [],
-    Target: [],
-    Value: []
-  }*/
 }
 
 const Chart = (props: IChartProps) => {

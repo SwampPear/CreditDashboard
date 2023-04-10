@@ -49,3 +49,14 @@
     margin: 0 0 1.5rem 0;
   }
 }
+
+.message {
+  color: var(--gray-purple);
+  display: flex;
+  font-weight: bold;
+  font-size: 1.25rem;
+  font-family: 'Cabin';
+  justify-content: center;
+  margin: 0 0 1.5rem 0;
+  width: 100%;
+}

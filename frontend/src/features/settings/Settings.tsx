@@ -2,10 +2,19 @@ import styles from './Settings.module.css'
 import { Modal } from 'antd'
 
 
-const Settings = () => {
+interface ISettingsProps {
+  open: boolean
+  close: () => void
+}
+
+const Settings = (props: ISettingsProps) => {
   return (
-    <Modal>
-      <p>this is the modal</p>
+    <Modal 
+      open={props.open}
+      onCancel={props.close}
+      footer={null}
+    >
+      <h2 className={styles.header}>Color Scheme</h2>
     </Modal>
   )
 }

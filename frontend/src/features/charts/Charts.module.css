@@ -14,10 +14,6 @@
   grid-gap: 16px;
 }
 
-.col {
-  width: 50%
-}
-
 .widgetContainer {
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -28,11 +24,6 @@
 }
 
 @media (max-width: 430px) {
-  .col {
-    height: fit-content;
-    width: 100%;
-  }
-
   .chartContainer {
     display: grid;
     grid-template-rows: auto;
@@ -48,8 +39,22 @@
     height: fit-content;
     padding: 0;
   }
+}
 
-  .row {
+@media (max-width: 768px) {
+  .chartContainer {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    grid-gap: 16px;
+  }
+
+  .widgetContainer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
     height: fit-content;
+    padding: 0;
   }
 }

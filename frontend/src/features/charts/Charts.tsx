@@ -68,27 +68,15 @@ const Charts = (props: IChartsProps) => {
   return (
     <>
       <div className={styles.chartContainer}>
-        <Row className={styles.row} gutter={[24, 24]}>
-          <Col className={styles.col}>
-            <div className={styles.widgetContainer}>
-              <Widget header="Total Products" content={totalProducts}/>
-              <Widget header="Total Members" content={totalMembers}/>
-              <Widget header="Max Life Stage" content={maxLifeStage}/>
-              <Widget header="Preferred Channel" content={preferredChannel}/>
-            </div>
-          </Col>
-          <Col className={styles.col}>
-            <Chart type='Pie' data={props.data}/>
-          </Col>
-        </Row>
-        <Row className={styles.row} gutter={[24, 24]}>
-          <Col className={styles.col}>
-            <Chart type='RadialBar' data={props.data}/>
-          </Col>
-          <Col className={styles.col}>
-            <Chart type='Column' data={props.data}/>
-          </Col>
-        </Row>
+        <div className={styles.widgetContainer}>
+          <Widget header="Total Products" content={totalProducts}/>
+          <Widget header="Total Members" content={totalMembers}/>
+          <Widget header="Max Life Stage" content={maxLifeStage}/>
+          <Widget header="Preferred Channel" content={preferredChannel}/>
+        </div>
+        <Chart type='Pie' data={props.data}/>
+        <Chart type='RadialBar' data={props.data}/>
+        <Chart type='Column' data={props.data}/>
       </div>
     </>
     

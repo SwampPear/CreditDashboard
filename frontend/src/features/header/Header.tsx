@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <Input.Search className={styles.search} placeholder="search" style={{ width: 200 }} />
-      <Dropdown menu={{ items }}>
+      <Dropdown menu={{ items }} placement='bottomRight'>
         <Space>
           <img src={profilePic} className={styles.profileImg}/>
           <DownOutlined />

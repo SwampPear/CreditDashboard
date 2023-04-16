@@ -6,12 +6,18 @@ and is capable of displaying up to three different datasets at a time in the thr
 charts in the interface. The app also includes some relevant statistics in the form of four
 'widgets', which display data pertaining to specific components of the datasets provided. The
 backend for this project is composed of an AWS Lambda function which is itself running through
-API Gateway.
+API Gateway. There are also a couple of different options to style that a user can choose for the style of the
+app, such as a classic white interface or a glassmorphic one. 
 
 <img src="assets/light.png">
 <img src="assets/opal.png">
 
-## Notes
+Changing between these would require going into settings under the user dropdown menu.
+
+<img src="assets/settings1.png">
+<img src="assets/settings2.png">
+
+## Changes
 Additionally, a small change was made to the data structure of the response in altering the 'data'
 field from the data type:
 

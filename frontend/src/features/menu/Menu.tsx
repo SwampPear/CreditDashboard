@@ -1,6 +1,5 @@
 import styles from './Menu.module.css'
 import { ArrowsFullscreen, Boxes, CalendarWeek, Question } from 'react-bootstrap-icons'
-
 import { useAppSelector } from '../../app/hooks'
 import { selectColorTheme, ColorTheme } from '../colorThemeSettings/ColorThemeSettingsSlice'
 
@@ -8,6 +7,11 @@ import { selectColorTheme, ColorTheme } from '../colorThemeSettings/ColorThemeSe
 const Menu = () => {
   const colorTheme = useAppSelector(selectColorTheme)
 
+  /**
+   * Returns proper class name for background for currently selected color theme.
+   * @param colorTheme - the current color theme
+   * @returns class name of color theme for this element
+   */
   const routeBGColor = (colorTheme: ColorTheme) => {
     switch(colorTheme) {
       case ColorTheme.LIGHT:
@@ -17,6 +21,11 @@ const Menu = () => {
     }
   }
 
+  /**
+   * Returns proper class name for buttons for currently selected color theme.
+   * @param colorTheme - the current color theme
+   * @returns class name of color theme for this element
+   */
   const routeButtonColor = (colorTheme: ColorTheme) => {
     switch(colorTheme) {
       case ColorTheme.LIGHT:

@@ -8,6 +8,7 @@ interface ISettingsProps {
   close: () => void
 }
 
+
 const Settings = (props: ISettingsProps) => {
   return (
     <Modal 

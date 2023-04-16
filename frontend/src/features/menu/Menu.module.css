@@ -9,11 +9,11 @@
 }
 
 .bgLight {
-  background-color: var(--bgWhite);
+  background-color: var(--bg-white);
 }
 
 .bgOpal {
-  background: var(--bg);
+  background: var(--bg-trans);
 }
 
 @media (max-width: 430px) {
@@ -44,7 +44,7 @@
 }
 
 .buttonLight:hover {
-  background-color: var(--bgGray);
+  background-color: var(--bg-gray);
 }
 
 .buttonOpal:hover {

@@ -3,14 +3,6 @@
   padding: 4rem;
 }
 
-
-@media (max-width: 430px) {
-  .content {
-    background: transparent;
-    padding: 1.5rem;
-  }
-}
-
 .container {
   background-color: transparent;
   border: none;
@@ -18,14 +10,14 @@
   width: 100%
 }
 
-.containerH1 {
+.h1 {
   color: var(--soft-black);
   font-size: 2rem;
   font-family: 'Cabin';
   margin: .5rem 0;
 }
 
-.containerH2 {
+.h2 {
   color: var(--gray-purple);
   font-weight: normal;
   font-size: 1.25rem;
@@ -34,19 +26,13 @@
 }
 
 @media (max-width: 430px) {
-  .containerH1 {
-    color: var(--soft-black);
-    font-size: 1.75rem;
-    font-family: 'Cabin';
-    margin: .25rem 0;
+  .content {
+    padding: 1.5rem;
   }
-  
-  .containerH2 {
-    color: var(--gray-purple);
-    font-weight: normal;
-    font-size: 1.25rem;
-    font-family: 'Cabin';
-    margin: 0 0 1.5rem 0;
+
+  .h1 {
+    font-size: 1.75rem;
+    margin: .25rem 0;
   }
 }
 

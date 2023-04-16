@@ -1,15 +1,15 @@
 import styles from './Charts.module.css'
-import { Row, Col, Select } from 'antd'
 import Chart from '../chart/Chart'
-import { apiData } from '../../app/types'
+import { APIData } from '../../app/types'
 import { useState, useEffect } from 'react'
 import Widget from '../widget/Widget'
 import { ChartType } from '../../app/types'
 
 
 interface IChartsProps {
-  data?: apiData[]
+  data?: APIData[]
 }
+
 
 const Charts = (props: IChartsProps) => {
   const [totalProducts, setTotalProducts] = useState<number>(0)

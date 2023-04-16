@@ -1,56 +1,40 @@
-.chartContainer {
+.container {
   border-radius: 1rem;
   box-shadow: var(--box-shadow);
   width: 100%;
 }
 
-.chartHeader {
+.header {
   font-size: 1.25rem;
   color: var(--soft-black);
   font-family: 'Cabin';
 }
 
-.chartControlsContainer {
+.controlsContainer {
   align-items: center;
   display: flex;
   justify-content: space-between;
   padding: 1.5rem;
 }
 
-.chart {
-  height: 100px;
-}
-
 .bgLight {
-  background-color: var(--bgWhite);
+  background-color: var(--bg-white);
 }
 
 .bgOpal {
-  background: var(--bg);
+  background: var(--bg-trans);
 }
 
 @media (max-width: 430px) {
-  .chartContainer {
-    border-radius: 1rem;
-    box-shadow: var(--box-shadow);
-    width: 100%;
+  .container {
     height: fit-content;
   }
 
-  .chartHeader {
+  .header {
     font-size: 1rem;
-    color: var(--soft-black);
-    font-family: 'Cabin';
   }
   
-  .chartControlsContainer {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
+  .controlsContainer {
     padding: 1rem;
-  }
-
-  .chart {
-    height: 100px;
   }
 }

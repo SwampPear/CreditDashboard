@@ -6,6 +6,11 @@ import { selectColorTheme, ColorTheme } from '../colorThemeSettings/ColorThemeSe
 const Background = () => {
   const colorTheme = useAppSelector(selectColorTheme)
 
+  /**
+   * Returns proper class name for currently selected color theme.
+   * @param colorTheme - the current color theme
+   * @returns class name of color theme for this element
+   */
   const routeColor = (colorTheme: ColorTheme) => {
     switch(colorTheme) {
       case ColorTheme.LIGHT:

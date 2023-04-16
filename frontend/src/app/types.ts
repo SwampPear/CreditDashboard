@@ -1,4 +1,4 @@
-export type apiData = {
+export type APIData = {
   Name: string
   XData: string[],
   YData: number[],
@@ -7,15 +7,15 @@ export type apiData = {
   Value: []
 }
 
-export type apiResponse = {
+export type APIResponse = {
   isSuccess: boolean
-  data: apiData[],
+  data: APIData[],
   systemCode: string
   message: string
   details: string
 }
 
-export type chartData = {
+export type ChartData = {
   XData: string, 
   YData: number
 }

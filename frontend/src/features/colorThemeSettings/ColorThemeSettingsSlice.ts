@@ -27,7 +27,5 @@ export const colorThemeSettingsSlice = createSlice({
 })
 
 export const { toggle } = colorThemeSettingsSlice.actions
-
 export const selectColorTheme = (state: RootState) => state.colorThemeSettings.colorTheme
-
 export default colorThemeSettingsSlice.reducer

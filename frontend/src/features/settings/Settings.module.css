@@ -8,10 +8,7 @@
 
 @media (max-width: 430px) {
   .header {
-    color: var(--soft-black);
-    font-weight: normal;
     font-size: 1.25rem;
-    font-family: 'Cabin';
     margin: 0 0 1.5rem 0;
   }
 }

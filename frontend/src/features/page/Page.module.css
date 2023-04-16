@@ -1,29 +1,10 @@
-.mainSection {
+.main {
   display: flex;
   height: 100vh;
   width: 100vw;
 }
 
-.menuWrapper {
-  align-items: center;
-  background-color: var(--bg);
-  box-shadow: var(--box-shadow);
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  width: 4rem;
-  position: fixed;
-}
-
-.menu {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 50vh;
-  justify-content: space-around;
-}
-
-.contentWrapper {
+.content {
   height: 100vh;
   width: calc(100vw - 4rem);
   position: absolute;
@@ -31,34 +12,8 @@
 }
 
 @media (max-width: 430px) {
-  .contentWrapper {
-    height: 100vh;
+  .content {
     width: 100vw;
-    position: absolute;
     left: 0;
   }
-}
-
-.menuButton {
-  align-items: center;
-  background-color: transparent;
-  border: none;
-  border-radius: .5rem;
-  cursor: pointer;
-  display: flex;
-  height: 1.7rem;
-  justify-content: center;
-  padding: .5rem;
-  transition: .2s ease-in-out;
-  width: 1.75rem;
-}
-
-.menuButton:hover {
-  background-color: var(--bg-hover);
-}
-
-.menuButtonIcon {
-  fill: var(--soft-black);
-  height: 1.5rem;
-  width: 1.5rem;
 }

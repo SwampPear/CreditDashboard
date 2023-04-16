@@ -1,5 +1,6 @@
 import styles from './Settings.module.css'
 import { Modal } from 'antd'
+import ColorThemeSettings from '../colorThemeSettings/ColorThemeSettings'
 
 
 interface ISettingsProps {
@@ -15,6 +16,7 @@ const Settings = (props: ISettingsProps) => {
       footer={null}
     >
       <h2 className={styles.header}>Color Scheme</h2>
+      <ColorThemeSettings/>
     </Modal>
   )
 }

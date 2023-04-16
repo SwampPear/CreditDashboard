@@ -1,71 +1,32 @@
-import style from './Chart.module.css'
+import styles from './Chart.module.css'
 import { useEffect, useState } from 'react'
 import { Pie, Column, RadialBar } from '@ant-design/plots'
 import { Select } from 'antd'
-import { apiData } from '../../app/types'
-
-const pieConfig = {
-  appendPadding: 16,
-  angleField: 'YData',
-  colorField: 'XData',
-  radius: 0.9,
-  label: {
-    type: 'inner',
-    offset: '-30%',
-    style: {
-      fontSize: 14,
-      textAlign: 'center',
-    },
-  },
-  interactions: [
-    {
-      type: 'element-active',
-    },
-  ],
-}
-
-const columnConfig = {
-  appendPadding: 16,
-  xField: 'XData',
-  yField: 'YData',
-  label: {
-    style: {
-      fill: '#FFFFFF',
-      opacity: 0.6,
-    },
-  },
-  xAxis: {
-    label: {
-      autoHide: true,
-      autoRotate: false,
-    },
-  },
-}
-
-// needed to fix type error in Ant radial bar chart
-const lineCapRound: 'round' | 'butt' | 'square' | undefined = 'round'
-
-const radialBarConfig = {
-  appendPadding: 16,
-  xField: 'XData',
-  yField: 'YData',
-  maxAngle: 270,
-  radius: 0.8,
-  innerRadius: 0.2,
-  barStyle: {
-    lineCap: lineCapRound,
-  },
-}
+import { apiData, chartData, pieConfig, radialBarConfig, columnConfig, ChartType } from '../../app/types'
+import { useAppSelector } from '../../app/hooks'
+import { selectColorTheme, ColorTheme } from '../colorThemeSettings/ColorThemeSettingsSlice'
 
 
 interface IChartProps {
-  type: 'Pie' | 'Column' | 'RadialBar'
-  data?: apiData['data']
+  type: ChartType
+  data?: apiData[]
 }
 
+
 const Chart = (props: IChartProps) => {
-  const [data, setData] = useState<{XData: string, YData: number}[]>()
+  const [data, setData] = useState<chartData[]>()
   const [dataSet, setDataSet] = useState<string>()
+
+  const colorTheme = useAppSelector(selectColorTheme)
+
+  const routeColor = (colorTheme: ColorTheme) => {
+    switch(colorTheme) {
+      case ColorTheme.LIGHT:
+        return styles.bgLight
+      case ColorTheme.OPAL:
+        return styles.bgOpal
+    }
+  }
 
   useEffect(() => {
     if (props.data) {
@@ -103,60 +64,34 @@ const Chart = (props: IChartProps) => {
     }
   }
 
+  const renderChart = (type: ChartType, data: chartData[]) => {
+    switch(type) {
+      case ChartType.PIE:
+        return <Pie className={styles.chart} {...pieConfig} data={data}></Pie>
+      case ChartType.COLUMN:
+        return <Column className={styles.chart} {...columnConfig} data={data}></Column>
+      case ChartType.RADIALBAR:
+        return <RadialBar className={styles.chart} {...radialBarConfig} data={data}></RadialBar>
+    }
+  }
+
   const render = () => {
     if (data) {
-      switch (props.type) {
-        case 'Pie':
-          return (
-            <div className={style.chartContainer}>
-              <div className={style.chartControlsContainer}>
-                <h1 className={style.chartHeader}>
-                  {dataSet?.match(/[A-Z][a-z]+|[0-9]+/g)?.join(" ")}
-                </h1>
-                <Select
-                  onChange={handleChange}
-                  defaultValue={props.data?.[0].Name}
-                  options={props.data?.map((element) => {return {value: element['Name'], label: element['Name']}})}
-                />
-              </div>
-              <Pie className={style.chart} {...pieConfig} data={data}></Pie>
-            </div>
-          )
-        case 'Column':
-          return (
-            <div className={style.chartContainer}>
-              <div className={style.chartControlsContainer}>
-                <h1 className={style.chartHeader}>
-                  {dataSet?.match(/[A-Z][a-z]+|[0-9]+/g)?.join(" ")}
-                </h1>
-                <Select
-                  onChange={handleChange}
-                  defaultValue={props.data?.[0].Name}
-                  options={props.data?.map((element) => {return {value: element['Name'], label: element['Name']}})}
-                />
-              </div>
-              <Column className={style.chart} {...columnConfig} data={data}></Column>
-            </div>            
-          )
-        case 'RadialBar':
-          return (
-            <div className={style.chartContainer}>
-              <div className={style.chartControlsContainer}>
-                <h1 className={style.chartHeader}>
-                  {dataSet?.match(/[A-Z][a-z]+|[0-9]+/g)?.join(" ")}
-                </h1>
-                <Select
-                  onChange={handleChange}
-                  defaultValue={props.data?.[0].Name}
-                  options={props.data?.map((element) => {return {value: element['Name'], label: element['Name']}})}
-                />
-              </div>
-              <RadialBar className={style.chart} {...radialBarConfig} data={data}></RadialBar>
-            </div>           
-          )
-        default:
-          return <></>
-      }
+      return (
+        <div className={`${styles.chartContainer} ${routeColor(colorTheme)}`}>
+          <div className={styles.chartControlsContainer}>
+            <h1 className={styles.chartHeader}>
+              {dataSet?.match(/[A-Z][a-z]+|[0-9]+/g)?.join(" ")}
+            </h1>
+            <Select
+              onChange={handleChange}
+              defaultValue={props.data?.[0].Name}
+              options={props.data?.map((element) => {return {value: element['Name'], label: element['Name']}})}
+            />
+          </div>
+          {renderChart(props.type, data)}
+        </div>
+      )
     }
 
     return <></>

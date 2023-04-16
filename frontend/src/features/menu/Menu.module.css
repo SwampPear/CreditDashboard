@@ -1,12 +1,19 @@
 .wrapper {
   align-items: center;
-  background-color: var(--bg);
   box-shadow: var(--box-shadow);
   display: flex;
   height: 100vh;
   justify-content: center;
   width: 4rem;
   position: fixed;
+}
+
+.bgLight {
+  background-color: var(--bgWhite);
+}
+
+.bgOpal {
+  background: var(--bg);
 }
 
 @media (max-width: 430px) {

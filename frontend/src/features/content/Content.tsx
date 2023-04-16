@@ -2,14 +2,14 @@ import styles from './Content.module.css'
 import { useState, useEffect } from 'react'
 import { Layout } from 'antd'
 import Charts from '../charts/Charts'
-import { apiData } from '../../app/types'
+import { apiResponse } from '../../app/types'
 
 
 const API_ENDPOINT = 'https://umcs1mrbkf.execute-api.us-west-2.amazonaws.com/Master'
 
 
 const Content = () => {
-  const [data, setData] = useState<apiData>()
+  const [data, setData] = useState<apiResponse>()
   const [error, setError] = useState<boolean>(false)
 
   useEffect(() => {

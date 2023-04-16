@@ -1,4 +1,15 @@
-.background {
+.bg {
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+  z-index: -1;
+}
+
+.bgLight {
+  background-color: var(--bgGray);
+}
+
+.bgOpal {
   background: 
     radial-gradient(
       30vw 30vw at 10vw 10vw, 
@@ -15,8 +26,4 @@
       rgb(248, 209, 177),
       rgba(0, 0, 0, 0)
     );
-  height: 100vh;
-  position: fixed;
-  width: 100vw;
-  z-index: -1;
 }

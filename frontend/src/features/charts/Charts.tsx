@@ -4,10 +4,11 @@ import Chart from '../chart/Chart'
 import { apiData } from '../../app/types'
 import { useState, useEffect } from 'react'
 import Widget from '../widget/Widget'
+import { ChartType } from '../../app/types'
 
 
 interface IChartsProps {
-  data?: apiData['data']
+  data?: apiData[]
 }
 
 const Charts = (props: IChartsProps) => {
@@ -74,9 +75,9 @@ const Charts = (props: IChartsProps) => {
           <Widget header="Max Life Stage" content={maxLifeStage}/>
           <Widget header="Preferred Channel" content={preferredChannel}/>
         </div>
-        <Chart type='Pie' data={props.data}/>
-        <Chart type='RadialBar' data={props.data}/>
-        <Chart type='Column' data={props.data}/>
+        <Chart type={ChartType.PIE} data={props.data}/>
+        <Chart type={ChartType.RADIALBAR} data={props.data}/>
+        <Chart type={ChartType.COLUMN} data={props.data}/>
       </div>
     </>
     

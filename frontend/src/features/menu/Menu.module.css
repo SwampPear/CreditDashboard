@@ -43,7 +43,11 @@
   width: 2.5rem;
 }
 
-.button:hover {
+.buttonLight:hover {
+  background-color: var(--bgGray);
+}
+
+.buttonOpal:hover {
   background-color: var(--bg-hover);
 }
 

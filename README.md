@@ -4,9 +4,15 @@
 This app is constructed using React, Ant Design, and Ant Design Charts for the front end
 and is capable of displaying up to three different datasets at a time in the three provided
 charts in the interface. The app also includes some relevant statistics in the form of four
-'widgets', which display data pertaining to specific components of the datasets provided.
+'widgets', which display data pertaining to specific components of the datasets provided. The
+backend for this project is composed of an AWS Lambda function which is itself running through
+API Gateway.
 
-Additionally, a small change was made to the data structure of the response in changing the 'data'
+<img src="assets/light.png">
+<img src="assets/opal.png">
+
+## Notes
+Additionally, a small change was made to the data structure of the response in altering the 'data'
 field from the data type:
 
 ```
@@ -41,7 +47,7 @@ to the type:
 ```
 Data: [
   {
-    Name: string (<dataset name>)
+    Name: <dataset name>,
     XData: string[],
     YData: int[],
     Source: [],

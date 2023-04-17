@@ -18,8 +18,8 @@ Changing between these would require going into settings under the user dropdown
 <img src="assets/settings2.png">
 
 ## Changes
-Additionally, a small change was made to the data structure of the response in altering the 'data'
-field from the data type:
+Additionally, I found the data structure provided for the API response to be constricting with regards to the flexibility
+for new datasets to be added to the response, so a small change was made to alter the data structure from:
 
 ```
 Data: {
@@ -48,7 +48,7 @@ Data: {
 }
 ```
 
-to the type:
+to the structure:
 
 ```
 Data: [
@@ -63,5 +63,4 @@ Data: [
 ]
 ```
 
-in order to allow a greater degree of flexibility in how additional datasets may be
-appended to the query.
+in order to discourage too much specificity in the response.

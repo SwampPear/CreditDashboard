@@ -19,7 +19,7 @@ Changing between these would require going into settings under the user dropdown
 
 ## Changes
 Additionally, I found the data structure provided for the API response to be constricting with regards to the flexibility
-for new datasets to be added to the response, so a small change was made to alter the data structure of the 'data' field from:
+for new datasets to be added to the response, so a small change was made to alter the data structure of the 'Data' field from:
 
 ```
 Data: {
